@@ -270,5 +270,5 @@ INSERT INTO veterinarians (id, name, age, work_duration, cats) VALUES
 
 SELECT * FROM adopters;
 SELECT * FROM cats;
-SELECT * FROM inventar;
+SELECT * FROM inventory;
 SELECT * FROM veterinarians;
