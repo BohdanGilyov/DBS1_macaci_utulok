@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS macaci_utulok;
 CREATE DATABASE IF NOT EXISTS macaci_utulok;
 USE macaci_utulok;
 
@@ -79,30 +80,30 @@ INSERT INTO `cats` VALUES (1,'Luna','female',3,'American Curl','Healthy. No know
 UNLOCK TABLES;
 
 --
--- Table structure for table `inventar`
+-- Table structure for table `inventory`
 --
 
-DROP TABLE IF EXISTS `inventar`;
+DROP TABLE IF EXISTS `inventory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `inventar` (
+CREATE TABLE `inventory` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nazov` varchar(100) NOT NULL,
-  `typ` varchar(50) NOT NULL,
-  `mnozstvo` decimal(10,2) NOT NULL,
-  `jednotka` varchar(20) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `quantity` decimal(10,2) NOT NULL,
+  `unit` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `inventar`
+-- Dumping data for table `inventory`
 --
 
-LOCK TABLES `inventar` WRITE;
-/*!40000 ALTER TABLE `inventar` DISABLE KEYS */;
-INSERT INTO `inventar` VALUES (1,'Granule pre macky','jedlo',50.00,'kg'),(2,'Konzervy pre macky','jedlo',120.00,'ks'),(3,'Vakcina proti besnote','vakcina',15.00,'ks'),(4,'Vakcina proti panleukopenii','vakcina',20.00,'ks'),(5,'Antibiotika','liek',30.00,'ks'),(6,'Lieky proti parazitom','liek',25.00,'ks'),(7,'Podstielka pre macky','hygiena',80.00,'kg'),(8,'Hracka mys','hracka',27.00,'ks'),(9,'Skrabadlo pre macky','hracka',12.00,'ks'),(10,'Napajacka pre macky','ubytovanie',27.00,'ks'),(11,'Krmidlo pre macky','ubytovanie',27.00,'ks'),(12,'Klietka pre mačku','ubytovanie',27.00,'ks');
-/*!40000 ALTER TABLE `inventar` ENABLE KEYS */;
+LOCK TABLES `inventory` WRITE;
+/*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
+INSERT INTO `inventory` VALUES (1,'Cat food','food',50.00,'kg'),(2,'Canned cat food','food',120.00,'pcs'),(3,'Rabies vaccine','vaccine',15.00,'pcs'),(4,'Panleukopenia vaccine','vaccine',20.00,'pcs'),(5,'Antibiotics','medicine',30.00,'pcs'),(6,'Anti-parasite medicine','medicine',25.00,'pcs'),(7,'Cat litter','hygiene',80.00,'kg'),(8,'Toy mouse','toy',27.00,'pcs'),(9,'Cat scratching post','toy',12.00,'pcs'),(10,'Cat water bowl','accommodation',27.00,'pcs'),(11,'Cat feeder','accommodation',27.00,'pcs'),(12,'Cat cage','accommodation',27.00,'pcs');
+/*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -141,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-26 21:31:57
+-- Dump completed on 2026-09-27 12:20:09

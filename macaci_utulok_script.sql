@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS macaci_utulok;
 CREATE DATABASE IF NOT EXISTS macaci_utulok;
 USE macaci_utulok;
 
@@ -217,29 +218,29 @@ INSERT INTO cats (id, name, gender, age, breed, health, cat_character, recommend
      'Provide a quiet separate space, fresh water and regular meals. Minimize stress during adaptation.',
      '2026-09-19');
 
-DROP TABLE IF EXISTS inventar;
+DROP TABLE IF EXISTS inventory;
 
-CREATE TABLE inventar (
+CREATE TABLE inventory (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nazov VARCHAR(100) NOT NULL,
-    typ VARCHAR(50) NOT NULL,
-    mnozstvo DECIMAL(10,2) NOT NULL,
-    jednotka VARCHAR(20) NOT NULL
+    name VARCHAR(100) NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    quantity DECIMAL(10,2) NOT NULL,
+    unit VARCHAR(20) NOT NULL
 );
 
-INSERT INTO inventar (id, nazov, typ, mnozstvo, jednotka) VALUES
-    (1, 'Granule pre macky', 'jedlo', 50.00, 'kg'),
-    (2, 'Konzervy pre macky', 'jedlo', 120.00, 'ks'),
-    (3, 'Vakcina proti besnote', 'vakcina', 15.00, 'ks'),
-    (4, 'Vakcina proti panleukopenii', 'vakcina', 20.00, 'ks'),
-    (5, 'Antibiotika', 'liek', 30.00, 'ks'),
-    (6, 'Lieky proti parazitom', 'liek', 25.00, 'ks'),
-    (7, 'Podstielka pre macky', 'hygiena', 80.00, 'kg'),
-    (8, 'Hracka mys', 'hracka', 27.00, 'ks'),
-    (9, 'Skrabadlo pre macky', 'hracka', 12.00, 'ks'),
-    (10, 'Napajacka pre macky', 'ubytovanie', 27.00, 'ks'),
-    (11, 'Krmidlo pre macky', 'ubytovanie', 27.00, 'ks'),
-    (12, 'Klietka pre mačku', 'ubytovanie', 27.00, 'ks');
+INSERT INTO inventory (id, name, type, quantity, unit) VALUES
+    (1, 'Cat food', 'food', 50.00, 'kg'),
+    (2, 'Canned cat food', 'food', 120.00, 'pcs'),
+    (3, 'Rabies vaccine', 'vaccine', 15.00, 'pcs'),
+    (4, 'Panleukopenia vaccine', 'vaccine', 20.00, 'pcs'),
+    (5, 'Antibiotics', 'medicine', 30.00, 'pcs'),
+    (6, 'Anti-parasite medicine', 'medicine', 25.00, 'pcs'),
+    (7, 'Cat litter', 'hygiene', 80.00, 'kg'),
+    (8, 'Toy mouse', 'toy', 27.00, 'pcs'),
+    (9, 'Cat scratching post', 'toy', 12.00, 'pcs'),
+    (10, 'Cat water bowl', 'accommodation', 27.00, 'pcs'),
+    (11, 'Cat feeder', 'accommodation', 27.00, 'pcs'),
+    (12, 'Cat cage', 'accommodation', 27.00, 'pcs');
 
 DROP TABLE IF EXISTS veterinarians;
 
