@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS macaci_utulok;
+-- DROP DATABASE IF EXISTS macaci_utulok; --
 CREATE DATABASE IF NOT EXISTS macaci_utulok;
 USE macaci_utulok;
 
