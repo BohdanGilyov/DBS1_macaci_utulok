@@ -1,18 +1,4 @@
--- DROP DATABASE IF EXISTS macaci_utulok; --
-CREATE DATABASE IF NOT EXISTS macaci_utulok;
 USE macaci_utulok;
-
-DROP TABLE IF EXISTS adopters;
-
-CREATE TABLE adopters (
-    adopterID INT PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    catID INT NOT NULL,
-    adoption_date DATE NOT NULL,
-    phone_num VARCHAR(20),
-    email VARCHAR(100)
-);
 
 INSERT INTO adopters (adopterID, first_name, last_name, catID, adoption_date, phone_num, email) VALUES
     (1, 'Tony', 'Stark', 3, '2025-05-23', '+380000000001', 'erlgjwei@fdijr.com'),
@@ -22,21 +8,7 @@ INSERT INTO adopters (adopterID, first_name, last_name, catID, adoption_date, ph
     (5, 'Princess', 'Cinderella', 6, '2025-07-07', '+3049593759', 'dfgqhfjrheio@rgkjq.com'),
     (6, 'Professor', 'McGonagall', 7, '2025-07-25', '+43782985596', 'daflkghjge@ergjn.com'),
     (7, 'Harry', 'Potter', 8, '2025-08-11', '+489560234', 'jteuyjyfiy@earlig.com');
-
-DROP TABLE IF EXISTS cats;
-
-CREATE TABLE cats (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100),
-    gender ENUM('male', 'female') NOT NULL,
-    age INT NOT NULL,
-    breed VARCHAR(100),
-    health TEXT NOT NULL,
-    cat_character TEXT NOT NULL,
-    recommendations TEXT,
-    date_arrival DATE NOT NULL
-);
-
+    
 INSERT INTO cats (id, name, gender, age, breed, health, cat_character, recommendations, date_arrival) VALUES
     (1, 'Luna', 'female', 3, 'American Curl',
      'Healthy. No known health problems.',
@@ -217,17 +189,7 @@ INSERT INTO cats (id, name, gender, age, breed, health, cat_character, recommend
      'Very shy and cautious. Needs time to become comfortable around people.',
      'Provide a quiet separate space, fresh water and regular meals. Minimize stress during adaptation.',
      '2026-09-19');
-
-DROP TABLE IF EXISTS inventory;
-
-CREATE TABLE inventory (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    type VARCHAR(50) NOT NULL,
-    quantity DECIMAL(10,2) NOT NULL,
-    unit VARCHAR(20) NOT NULL
-);
-
+     
 INSERT INTO inventory (id, name, type, quantity, unit) VALUES
     (1, 'Cat food', 'food', 50.00, 'kg'),
     (2, 'Canned cat food', 'food', 120.00, 'pcs'),
@@ -241,17 +203,7 @@ INSERT INTO inventory (id, name, type, quantity, unit) VALUES
     (10, 'Cat water bowl', 'accommodation', 27.00, 'pcs'),
     (11, 'Cat feeder', 'accommodation', 27.00, 'pcs'),
     (12, 'Cat cage', 'accommodation', 27.00, 'pcs');
-
-DROP TABLE IF EXISTS veterinarians;
-
-CREATE TABLE veterinarians (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    age INT NOT NULL,
-    work_duration VARCHAR(50) NOT NULL,
-    cats TEXT NOT NULL
-);
-
+    
 INSERT INTO veterinarians (id, name, age, work_duration, cats) VALUES
     (1, 'Andrii Koval', 24, '10 mesiacov',
      'Luna, Milo, Simba, Leo, Oliver, Nala'),
@@ -267,8 +219,3 @@ INSERT INTO veterinarians (id, name, age, work_duration, cats) VALUES
 
     (5, 'Mykola Tkachenko', 55, '3 roky',
      'Ruby, Finn, Chloe, Theo, Zoe, Archie');
-
-SELECT * FROM adopters;
-SELECT * FROM cats;
-SELECT * FROM inventory;
-SELECT * FROM veterinarians;
