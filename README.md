@@ -1,2 +1,2 @@
 > [!IMPORTANT]
-> Use only scripts folder
+> **Use only scripts folder!**
